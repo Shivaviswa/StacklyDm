@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Background Video</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .content-container {
+            position: relative;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .start-button {
+            padding: 15px 20px;
+            font-size: 18px;
+            color: white;
+            background:  #5EA51D;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.35s ease, box-shadow 0.3s ease;
+            margin-top: 350px;
+        }
+
+        .start-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px #000F22;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <video autoplay loop muted>
+        <source src="bg video.mp4" type="video/mp4">
+        
+    </video>
+    
+    <div class="content-container">
+        <button class="start-button" onclick="startHomePage()">Start Home Page</button>
+    </div>
+
+    <script>
+        function startHomePage() {
+            window.location.href = "test.html"; // Change to your home page URL
+        }
+    </script>
+</body>
+</html>
